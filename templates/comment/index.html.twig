@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comments{% endblock %}
+
+{% block body %}
+    <div class="container jumbotron">
+        <h2>All comments</h2><br>
+        <table class="table table-light table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>content</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comment in comments %}
+                    <tr>
+                        <td>{{ comment.id }}</td>
+                        <td>{{ comment.title }}</td>
+                        <td>{{ comment.content }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
